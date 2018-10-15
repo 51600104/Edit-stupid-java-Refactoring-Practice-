@@ -1,93 +1,66 @@
-package stupid;import java.io.IOException;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 
-
-import java.nio.file.Files;import java.nio.file.Paths;public class x {
-
-    public static void main(String[] arg)   {        int CC=hohoho(arg);System.exit(CC);    }
-
-    public static int hohoho(String uuu[]) {
-
-        try{if
-
-        (uuu.length != 2) return
-
--1
-
-            ;String bbb,ddd= new String(Files.readAllBytes(Paths.get(uuu[1]))); 
-
-            bbb= new String(Files.readAllBytes(Paths.get(uuu[0])));
-
-            int kkk = bbb.length();
-
-            if(kkk<4)               return
-
--2
-
-            ;int RRR=0; float eee=0;
-
-            for(int aaa=0;aaa<kkk-3;aaa++)
-
-            {       for(int qqq=0;qqq<ddd.length()-4;qqq+=1)             {int vOv = 0;
-
-                    for(int CC=0;CC<4;CC++){
-
-                    if(bbb.charAt(aaa+Cpackage stupid;import java.io.IOException;
+/**
+ *
+ * @author 51600104
+ */
 
 
+    package stupid ;
+    import java.io.IOException ;
 
-import java.nio.file.Files;import java.nio.file.Paths;public class x {
+    import java.nio.file.Files ;
+    import java.nio.file.Paths ;
 
-    public static void main(String[] arg)   {        int CC=hohoho(arg);System.exit(CC);    }
+    public class x {
 
-    public static int hohoho(String uuu[]) {
+        public static void main(String[] arg) {
+            int CC = hohoho(arg);
+            System.exit(CC);
+        }
 
-        try{if
+        public static int hohoho(String uuu[]) {
+            try {
+                if (uuu.length != 2) {
+                    return -1;
+                }
+                String bbb, ddd = new String(Files.readAllBytes(Paths.get(uuu[1])));
+                bbb = new String(Files.readAllBytes(Paths.get(uuu[0])));
+                int kkk = bbb.length();
+                if (kkk < 4) {
+                    return -2;
+                }
+                int RRR = 0;
+                float eee = 0;
+                for (int aaa = 0; aaa < kkk - 3; aaa++) {
+                    for (int qqq = 0; qqq < ddd.length() - 4; qqq += 1) {
+                        int vOv = 0;
+                        for (int CC = 0; CC < 4; CC++) {
+                            if (bbb.charAt(aaa + CC) == ddd.charAt(qqq + CC)) {
+                                vOv++;
+                            }
+                        }
+                        if (vOv == 4) {
+                            System.out.println("DEBUG:".concat(String.valueOf(aaa) + "," + String.valueOf(qqq)));
+                            RRR++;
+                            eee += 1;
+                        } else {
+                            ++RRR;
+                        }
+                    }
+                }
+                System.out.println(String.valueOf(Math.round(eee)).concat("/")
+                        + String.valueOf(RRR));
+                return 1;
+            } catch (IOException ex) {
+                System.out.println("DEBUG:Error");
+                return -3;
+            }
+        }
+    }
 
-        (uuu.length != 2) return
-
--1
-
-            ;String bbb,ddd= new String(Files.readAllBytes(Paths.get(uuu[1]))); 
-
-            bbb= new String(Files.readAllBytes(Paths.get(uuu[0])));
-
-            int kkk = bbb.length();
-
-            if(kkk<4)               return
-
--2
-
-            ;int RRR=0; float eee=0;
-
-            for(int aaa=0;aaa<kkk-3;aaa++)
-
-            {       for(int qqq=0;qqq<ddd.length()-4;qqq+=1)             {int vOv = 0;
-
-                    for(int CC=0;CC<4;CC++){
-
-                    if(bbb.charAt(aaa+CC) == ddd.charAt(qqq+CC))              vOv ++;
-
-            }       if (vOv == 4)
-
-                {
-
-                    System.out.println("DEBUG:".concat(String.valueOf(aaa) + "," + String.valueOf(qqq)));
-
-                RRR++; eee+=1;}
-
-                else             ++RRR;                         }}
-
-            System.out.println(String.valueOf(Math.round(eee)).concat("/")
-
-+ String.valueOf(RRR));   return
-
-1
-
-                            ;} catch(IOException
-
-            ex){System.out.println("DEBUG:Error");return
-
--3
-
-                            ;}}}
